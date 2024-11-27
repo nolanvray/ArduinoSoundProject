@@ -20,5 +20,5 @@ Here is a rundown of steps I used and goals I considered:
 
 
 # Board Diagram
-# Code 
-I will be posting all of the code I used here soon.
+[ArduinoSoundSensor](https://github.com/user-attachments/assets/e8b21ab5-88b1-4c74-9703-ec576d1e6b37)
+
