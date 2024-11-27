@@ -17,7 +17,8 @@ Here is a rundown of steps I used and goals I considered:
 |C++ Editor| Arduino IDE 2.3.3|
 |AI | GoogleCollab |
 |Hardware|Elegoo Mega2560 R3, Sound Sensor|
-
+# Board Diagram
+A diagram of my board setup can be found here: [Board Diagram](ArduinoSoundProject/board diagram/ ArduinoSoundSensor.png)
 # Code
 1. I first wrote the code for the board in **ArduinoIDE 2.3.3**.
 There are no imports needed, just a C++ interpreter.
@@ -32,8 +33,4 @@ import threading
 import os 
 ```
 Here is a link to the full code, which can also be found in the file titled <ins>code</ins> within the repository: [ArduinoSoundReadings.py](code/ArduinoSoundReadings.py)
-
-# Board Diagram
-![ArduinoSoundSensor](https://github.com/user-attachments/assets/e8b21ab5-88b1-4c74-9703-ec576d1e6b37)
-<img src = "https://github.com/user-attachments/assets/e8b21ab5-88b1-4c74-9703-ec576d1e6b37" width ="15" length = "15">
 
