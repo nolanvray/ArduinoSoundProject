@@ -18,10 +18,22 @@ Here is a rundown of steps I used and goals I considered:
 |AI | GoogleCollab |
 |Hardware|Elegoo Mega2560 R3, Sound Sensor|
 
+# Code
+1. I first wrote the code for the board in **ArduinoIDE 2.3.3**.
+There are no imports needed, just a C++ interpreter.
+The code can be found here:[SoundSensor.ino]
+3. Second I wrote the code for saving and using the data from the arduino. I did this using **Python 3.13 in VS Code**. Other python interpreters can be used as long as they support the following imports:
+```
+import serial 
+import time 
+import csv 
+import matplotlib.pyplot as plt 
+import threading 
+import os 
+```
+Here is a link to the full code, which can also be found in the file titled <ins>code</ins> within the repository: [ArduinoSoundReadings.py]
 
 # Board Diagram
-
-[ArduinoSoundSensor](https://github.com/user-attachments/assets/e8b21ab5-88b1-4c74-9703-ec576d1e6b37)
 ![ArduinoSoundSensor](https://github.com/user-attachments/assets/e8b21ab5-88b1-4c74-9703-ec576d1e6b37)
 <img src = "https://github.com/user-attachments/assets/e8b21ab5-88b1-4c74-9703-ec576d1e6b37" width ="15" length = "15">
 
