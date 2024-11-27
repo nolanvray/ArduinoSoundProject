@@ -20,5 +20,8 @@ Here is a rundown of steps I used and goals I considered:
 
 
 # Board Diagram
+
 [ArduinoSoundSensor](https://github.com/user-attachments/assets/e8b21ab5-88b1-4c74-9703-ec576d1e6b37)
+![ArduinoSoundSensor](https://github.com/user-attachments/assets/e8b21ab5-88b1-4c74-9703-ec576d1e6b37)
+<img src = "https://github.com/user-attachments/assets/e8b21ab5-88b1-4c74-9703-ec576d1e6b37" width ="15" length = "15">
 
