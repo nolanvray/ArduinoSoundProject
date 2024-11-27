@@ -21,7 +21,7 @@ Here is a rundown of steps I used and goals I considered:
 # Code
 1. I first wrote the code for the board in **ArduinoIDE 2.3.3**.
 There are no imports needed, just a C++ interpreter.
-The code can be found here: [SoundSensor.ino](code/SoundSensor.io)
+The code can be found here: [SoundSensor.ino](code/SoundSensor.ino)
 3. Second I wrote the code for saving and using the data from the arduino. I did this using **Python 3.13 in VS Code**. Other python interpreters can be used as long as they support the following imports:
 ```
 import serial 
