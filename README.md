@@ -11,6 +11,7 @@ Here is a rundown of steps I used and goals I considered:
      - Use Isolation Forest to detect anomalies in data. Anomalies occur when the sound stays consistent for a while, or when there are sudden flucuations. 
      - Analyze the data to find the loudest and quietist sound values of the most recent file, as well as a user specified date. All files from the specific date are analyzed and the extremes are returned.
 
+Here is a video showcasing this project running: (video here soon)
 # Software and Hardware Used
 |Tool|Suggestion|
 |-----|----------|
@@ -26,7 +27,7 @@ All of the code I used can be found in the file titled **code** within the repos
 You will need a C++ editor/ interpretor for this. No imports are required. 
 The code can be found here: [SoundSensor.ino](code/SoundSensor.ino)
 
-2. Second I wrote the code for saving and using the data from the arduino. I did this using **Python 3.13 in VS Code**. Other python interpreters can be used. You will need the following imports:
+2. Second I wrote the code for saving and using the data from the arduino. I did this using **Python 3.13 in VS Code**. Other python interpreters can be used. Here is a link to the full code: [ArduinoSoundReadings.py](code/ArduinoSoundReadings.py). You will need the following imports:
 ```
 import serial 
 import time 
@@ -35,9 +36,8 @@ import matplotlib.pyplot as plt
 import threading 
 import os 
 ```
-Here is a link to the full code: [ArduinoSoundReadings.py](code/ArduinoSoundReadings.py)
 
-3. Lastly I wrote code to make observations on the saved data, utilizing Isolation Forest. I wrote this code using **Python 3.13 in VS Code**. Same as step two, other python interpreters can be used. You will need the following imports:
+3. Lastly I wrote code to make observations on the saved data, utilizing Isolation Forest. I wrote this code using **Python 3.13 in VS Code**. Same as step two, other python interpreters can be used. Here is a link to the full code: [ArduinoSound_IForest.py](code/ArduinoSound_IForest.py). You will need the following imports:
 ```
 import os
 import pandas as pd
@@ -46,4 +46,4 @@ import re
 from datetime import datetime
 from sklearn.ensemble import IsolationForest
 ```
-Here is a link to the full code: [ArduinoSound_IForest.py](code/ArduinoSound_IForest.py)
+
