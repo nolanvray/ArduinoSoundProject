@@ -8,7 +8,7 @@ Here is a rundown of steps I used and goals I considered:
      - Create and save CSV files with data and timestamps. 
      - Create and save graphs using Matplotlib (just for visual help).
 4. Use Isolation Forest and logic functions to make observations about the data.
-     - Use Isolation Forest to detect anomalies in data. Anomalies occur when the sound stays consistent for a while, or when there are sudden flucuations. 
+     - Use Isolation Forest to detect anomalies in data. Anomalies occur when the sound stays consistent for a while, or when there are sudden fluctuations. 
      - Analyze the data to find the loudest and quietist sound values of the most recent file, as well as a user specified date. All files from the specific date are analyzed and the extremes are returned.
 
 Here is a video showcasing this project running: (video here soon)
