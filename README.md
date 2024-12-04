@@ -1,5 +1,5 @@
 # ArduinoSoundProject
-The goal of this project is to record and obtain sound data using a board, then have an AI identify when extreme sounds (highs and lows) were recorded. 
+The goal of this project is to record and obtain sound data using a board, then have an AI identify when anomalies were recorded. 
 Here is a rundown of steps I used and goals I considered:
 1. Code the instructions for the board in C++.
 2. Put the board together and test it's functionality.
