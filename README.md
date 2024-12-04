@@ -5,8 +5,8 @@ Here is a rundown of steps I used and goals I considered:
 2. Put the board together and test it's functionality.
 3. Use serial port to read data from board in python.
      - Run the board and collect/ view data.
-     - Create and save CSV files with data and timestamps. 
-     - Create and save graphs using Matplotlib (just for visual help).
+     - Create and save CSV files with data and timestamps. [CSV example here](examples/csv_format.png). 
+     - Create and save graphs using Matplotlib (just for visual help). [Dot plot example here](examples/sod_dot_plot.png).
 4. Use Isolation Forest and logic functions to make observations about the data.
      - Use Isolation Forest to detect anomalies in data. Anomalies occur when the sound stays consistent for a while, or when there are sudden fluctuations. 
      - Analyze the data to find the loudest and quietist sound values of the most recent file, as well as a user specified date. All files from the specific date are analyzed and the extremes are returned.
@@ -20,14 +20,14 @@ Here is a video showcasing this project running: (video here soon)
 |AI | Isolation Forest |
 |Hardware|Elegoo Mega2560 R3, Sound Sensor|
 # Board Diagram
-A diagram of my board setup can be found under the file [Board Diagram](boardDiagram/ArduinoSoundSensor.png) within this repository.
+A diagram of my board setup can be found here: [Board Diagram](board_diagram/sound_sensor_board.png).
 # Code
 All of the code I used can be found in the file titled **code** within the repository, or through the hyperlinks in these descriptions.
 1. I first wrote the code for the board in **ArduinoIDE 2.3.3**.
 You will need a C++ editor/ interpretor for this. No imports are required. 
-The code can be found here: [SoundSensor.ino](code/SoundSensor.ino)
+The code can be found here: [sound_sensor.ino](code/sound_sensor.ino)
 
-2. Second I wrote the code for saving and using the data from the arduino. I did this using **Python 3.13 in VS Code**. Other python interpreters can be used. Here is a link to the full code: [ArduinoSoundReadings.py](code/ArduinoSoundReadings.py). You will need the following imports:
+2. Second I wrote the code for saving and using the data from the arduino. I did this using **Python 3.13 in VS Code**. Other python interpreters can be used. Here is a link to the full code: [sound_csv_plot.py](code/sound_csv_plot.py). You will need the following imports:
 ```
 import serial 
 import time 
@@ -37,7 +37,7 @@ import threading
 import os 
 ```
 
-3. Lastly I wrote code to make observations on the saved data, utilizing Isolation Forest. I wrote this code using **Python 3.13 in VS Code**. Same as step two, other python interpreters can be used. Here is a link to the full code: [ArduinoSound_IForest.py](code/ArduinoSound_IForest.py). You will need the following imports:
+3. Lastly I wrote code to make observations on the saved data, utilizing Isolation Forest. I wrote this code using **Python 3.13 in VS Code**. Same as step two, other python interpreters can be used. Here is a link to the full code: [detect_sound_anomaly.py](code/detect_sound_anomaly.py). You will need the following imports:
 ```
 import os
 import pandas as pd
