@@ -20,7 +20,7 @@ Here is a video showcasing this project running: (video here soon)
 |AI | Isolation Forest |
 |Hardware|Elegoo Mega2560 R3, Sound Sensor|
 # Board Diagram
-A diagram of my board setup can be found under the file [Board Diagram](board diagram/ArduinoSoundSensor.png) within this repository.
+A diagram of my board setup can be found under the file [Board Diagram](boardDiagram/ArduinoSoundSensor.png) within this repository.
 # Code
 All of the code I used can be found in the file titled **code** within the repository, or through the hyperlinks in these descriptions.
 1. I first wrote the code for the board in **ArduinoIDE 2.3.3**.
