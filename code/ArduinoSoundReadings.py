@@ -71,15 +71,23 @@ date_str= time.strftime("%Y-%m-%d")
 sequence_number = 1
 
 # Check where in sequence you are on date of collection
-# This is my file path, replace with your own
-while os.path.exists(f'C:\\Users\\sl0th\\Arduino_Data\\data_{date_str}_{sequence_number:02d}.csv'):
+# Put in the filepath where your csv files are stored
+while os.path.exists('Your filepath here'):
     sequence_number += 1
 
 # Name for file
-file_path =f'C:\\Users\\sl0th\\Arduino_Data\\data_{date_str}_{sequence_number:02d}.csv'
+file_path =f'Your Filepath\\data_{date_str}_{sequence_number:02d}.csv'
 
 
-# Write CSV file
+'''
+Writes the CSV file in the format below.
+
+|Timestamp|Sound Value(D)|
+--------------------------
+|2024-11-19 23:26:23| 235|
+|2024-11-19 23:26:24|234|
+
+'''
 with open(file_path, 'w', newline='') as f:
     writer = csv.writer(f)
     writer.writerow(['Timestamp','Sound Value(D)'])
@@ -98,7 +106,7 @@ plt.ylabel('Sound Value (D)')# Y axis label
 plt.grid(True)
 
 # Plot management
-plt.savefig(f'C:\\Users\\sl0th\\Arduino_Data\\sound_values_plot_{date_str}_{sequence_number:02d}.png') #Save plot
+plt.savefig(f'Your Filepath\\sound_values_plot_{date_str}_{sequence_number:02d}.png') #Save plot
 plt.show() #Show Plot
 
 
