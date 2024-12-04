@@ -1,6 +1,7 @@
 '''
 Last updated on 12/04/24.
 Written by Nolan Ray (https://github.com/nolanvray) for a school project.
+
 Takes CSV files of sound data and returns the timestamp where the min and max values occurred. Also uses
 Isolation Forest to detect anomalies in the data.
 '''
