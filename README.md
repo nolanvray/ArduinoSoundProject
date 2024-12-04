@@ -6,7 +6,7 @@ Here is a rundown of steps I used and goals I considered:
 3. Use serial port to read data from board in python.
      - Run the board and collect/ view data.
      - Create and save CSV files with data and timestamps. [CSV example here](examples/csv_format.png). 
-     - Create and save graphs using Matplotlib (just for visual help). [Dot plot example here](examples/sod_dot_plot.png).
+     - Create and save graphs using Matplotlib (just for visual help). [Dot plot example here](examples/sound_dot_plot.png).
 4. Use Isolation Forest and logic functions to make observations about the data.
      - Use Isolation Forest to detect anomalies in data. Anomalies occur when the sound stays consistent for a while, or when there are sudden fluctuations. 
      - Analyze the data to find the loudest and quietist sound values of the most recent file, as well as a user specified date. All files from the specific date are analyzed and the extremes are returned.
