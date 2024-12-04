@@ -6,6 +6,7 @@ from datetime import datetime
 from sklearn.ensemble import IsolationForest
 
 # Function to find the most recent CSV file based on the date in the filename
+# My CSV files are named in this format: 'data_YYYY-MM-DD_x.csv'. Example: 'data_2024-12-02_04.csv' 
 def find_latest_csv(directory):
     csv_files = glob.glob(os.path.join(directory, "data_*.csv"))
     latest_file = None
@@ -26,7 +27,7 @@ def find_latest_csv(directory):
 # Function to handle user input for a date, accepting different formats
 def parse_date_input(date_input):
     date_formats = ["%Y-%m-%d", "%m-%d-%Y"]
-
+# If the format is wrong, prompts the user to retry
     for date_format in date_formats:
         try:
             return datetime.strptime(date_input, date_format).strftime("%Y-%m-%d")
@@ -43,33 +44,41 @@ def find_loudest_and_quietest_on_date(directory, target_date_str):
     if not csv_files:
         print(f"No files found for the date: {target_date_str}")
         return None
-
-    overall_loudest_value = -float('inf')
-    overall_quietest_value = float('inf')
+# Creates the objects that store the loudest/quietist values, timestamps, and filenames.
+    overall_loudest_value = -float('inf') # Sets loudest value at - infinity
+    overall_quietest_value = float('inf') # Sets quietist value at + infinity
     overall_loudest_timestamp = ''
     overall_quietest_timestamp = ''
     overall_loudest_filename = ''
     overall_quietest_filename = ''
 
+# Iterates over the CSV files
     for csv_file in csv_files:
-        df = pd.read_csv(csv_file)
-        df['Timestamp'] = df['Timestamp'].astype(str)
-        df['Sound Value(D)'] = df['Sound Value(D)'].astype(float)
-        df = df.fillna('')
+        df = pd.read_csv(csv_file) # Read the file into a dataframe
+        df['Timestamp'] = df['Timestamp'].astype(str) # Convert the timestamp column to a string
+        df['Sound Value(D)'] = df['Sound Value(D)'].astype(float) # Convert the sound value column to a float
+        df = df.fillna('') # Replace any empty values with a blank string
 
+        # Finds the row where the minimum and maximum values are located
         loudest_row = df.loc[df['Sound Value(D)'].idxmax()]
         quietest_row = df.loc[df['Sound Value(D)'].idxmin()]
 
+        # Check if current value of the loudest row is greater than the overall loudest value
+        # If yes, the loudest value, it's corresponding timestamp, and file are stored/ updated
         if loudest_row['Sound Value(D)'] > overall_loudest_value:
             overall_loudest_value = loudest_row['Sound Value(D)']
             overall_loudest_timestamp = loudest_row['Timestamp']
             overall_loudest_filename = os.path.basename(csv_file)
 
+        # Check if current value of the quietist row is greater than the overall quietist value
+        # If yes, the quietist value, it's corresponding timestamp, and file are stored/ updated
         if quietest_row['Sound Value(D)'] < overall_quietest_value:
             overall_quietest_value = quietest_row['Sound Value(D)']
             overall_quietest_timestamp = quietest_row['Timestamp']
             overall_quietest_filename = os.path.basename(csv_file)
 
+    # Lines 81 & 82 extract the time from the timestamp string by splitting on the space and taking the second part
+    # For reference again, the strings in the Timestamp row are in "YYYY-MM-DD HH:MM:SS" format
     loudest_time = overall_loudest_timestamp.split(" ")[1]
     quietest_time = overall_quietest_timestamp.split(" ")[1]
 
@@ -99,11 +108,11 @@ def detect_anomalies_isolation_forest(df, contamination=0.05):
 
 # --- Main Execution ---
 def main():
-    csv_directory = r"C:\Users\sl0th\Arduino_Data"
+    csv_directory = r"Your Directory"
 
     # Get user input for a specific date and analyze that date's data
     while True:
-        target_date_str = input("Enter a date (YYYY-MM-DD) to find loudest and quietest sounds for that day: ")
+        target_date_str = input("Enter a date (YYYY-MM-DD or MM-DD-YYYY) to find loudest and quietest sounds for that day: ")
         try:
             # Attempt to parse and validate the date
             target_date_str = parse_date_input(target_date_str)
@@ -112,7 +121,7 @@ def main():
             # Find loudest and quietest for the given date
             loudest_quietest_info = find_loudest_and_quietest_on_date(csv_directory, target_date_str)
 
-            # Now, we need to check for anomalies for that date using Isolation Forest
+            # Check for anomalies for that date using Isolation Forest
             csv_files = glob.glob(os.path.join(csv_directory, f"data_{target_date_str}_*.csv"))
             all_anomalies = []
 
