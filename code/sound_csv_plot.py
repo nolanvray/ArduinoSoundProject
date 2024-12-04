@@ -1,6 +1,6 @@
 '''
 Written by Nolan Ray (https://github.com/nolanvray) for a school project.
-Last updated on 11/26/24.
+Last updated on 12/04/24.
 
 This code collects sound data from an arduino device and then uses said data to create
 a csv file and dot plot.
